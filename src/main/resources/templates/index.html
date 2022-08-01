@@ -17,6 +17,12 @@
     <title>Car_Accident</title>
 </head>
 <body>
-Hello : Accident
+<table class="table">
+    <tbody>
+    <tr th:each="user: ${users}">
+        <td th:text="${user}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
