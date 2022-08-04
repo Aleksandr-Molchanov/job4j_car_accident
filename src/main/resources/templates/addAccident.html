@@ -54,6 +54,12 @@
                             <option th:each="element : ${types}" th:value="${element.id}" th:text="${element.name}"></option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="rule.id">Категория</label>
+                        <select class="form-control" id="rule.id" name="rule.id" multiple>
+                            <option th:each="element : ${rules}" th:value="${element.id}" th:text="${element.name}"></option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </form>
             </div>
