@@ -12,7 +12,7 @@
   </parent>
 
   <groupId>ru.job4j</groupId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <artifactId>job4j_car_accident</artifactId>
   <version>1.0-SNAPSHOT</version>
 
@@ -108,6 +108,14 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
       </plugin>
     </plugins>
   </build>
