@@ -1,8 +1,8 @@
-package ru.job4j.service;
+package ru.job4j.accident.service;
 
 import org.springframework.stereotype.Service;
-import ru.job4j.model.AccidentType;
-import ru.job4j.repository.AccidentTypeMem;
+import ru.job4j.accident.model.AccidentType;
+import ru.job4j.accident.repository.AccidentTypeMem;
 
 import java.util.Collection;
 

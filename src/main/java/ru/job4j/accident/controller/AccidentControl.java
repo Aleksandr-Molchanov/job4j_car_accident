@@ -1,13 +1,13 @@
-package ru.job4j.controller;
+package ru.job4j.accident.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.job4j.model.Accident;
-import ru.job4j.model.Rule;
-import ru.job4j.service.AccidentService;
-import ru.job4j.service.AccidentTypeService;
-import ru.job4j.service.RuleService;
+import ru.job4j.accident.model.Accident;
+import ru.job4j.accident.model.Rule;
+import ru.job4j.accident.service.AccidentService;
+import ru.job4j.accident.service.AccidentTypeService;
+import ru.job4j.accident.service.RuleService;
 
 import java.util.HashSet;
 import java.util.List;

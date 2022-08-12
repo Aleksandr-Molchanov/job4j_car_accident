@@ -1,8 +1,8 @@
-package ru.job4j.service;
+package ru.job4j.accident.service;
 
 import org.springframework.stereotype.Service;
-import ru.job4j.model.Rule;
-import ru.job4j.repository.RuleMem;
+import ru.job4j.accident.model.Rule;
+import ru.job4j.accident.repository.RuleMem;
 
 import java.util.Collection;
 

@@ -1,6 +1,6 @@
-package ru.job4j.repository;
+package ru.job4j.accident.repository;
 import org.springframework.stereotype.Repository;
-import ru.job4j.model.AccidentType;
+import ru.job4j.accident.model.AccidentType;
 
 import java.util.Collection;
 import java.util.Map;
