@@ -57,7 +57,8 @@ public class AccidentHibernate implements DBStore {
         return tx(
                 session -> session.createQuery(
                         "select distinct a from Accident a "
-                                + "join fetch a.accidentType at", Accident.class
+                                + "join fetch a.accidentType at "
+                                + "join fetch a.rules r ", Accident.class
                 ).list(), sf
         );
     }

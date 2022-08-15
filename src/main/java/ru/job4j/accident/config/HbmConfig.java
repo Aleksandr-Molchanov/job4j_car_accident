@@ -33,15 +33,13 @@ public class HbmConfig {
     }
 
     @Bean
-    public LocalSessionFactoryBean sessionFactory(@Value("${hibernate.dialect}") String dialect,
-                                                  @Value("${hibernate.hbm2ddl.auto}") String hbm2ddl,
-                                                  DataSource ds) {
+    public LocalSessionFactoryBean sessionFactory(@Value("${hibernate.dialect}") String dialect, DataSource ds) {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(ds);
         sessionFactory.setPackagesToScan("ru.job4j.accident.model");
         Properties cfg = new Properties();
         cfg.setProperty("hibernate.dialect", dialect);
-        cfg.setProperty("hibernate.hbm2ddl.auto", hbm2ddl);
+        cfg.setProperty("hibernate.hbm2ddl.auto", "update");
         sessionFactory.setHibernateProperties(cfg);
         return sessionFactory;
     }
