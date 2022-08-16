@@ -43,10 +43,10 @@ public class AccidentControl {
     public String saveAccident(@ModelAttribute Accident accident,
                                @RequestParam("accidentType.id") int idAccidentType,
                                @RequestParam("rule.id") List<Integer> idRules) {
-        accident.setAccidentType(accidentTypeService.findById(idAccidentType));
+        accident.setAccidentType(accidentTypeService.findById(idAccidentType).get());
 
         Set<Rule> rules = new HashSet<>();
-        idRules.forEach(n -> rules.add(ruleService.findById(n)));
+        idRules.forEach(n -> rules.add(ruleService.findById(n).get()));
         accident.setRules(rules);
         accidentService.addAccident(accident);
         return "redirect:/accidents";
@@ -64,9 +64,9 @@ public class AccidentControl {
     public String updateAccident(@ModelAttribute Accident accident,
                                  @RequestParam("accidentType.id") int idAccidentType,
                                  @RequestParam("rule.id") List<Integer> idRules) {
-        accident.setAccidentType(accidentTypeService.findById(idAccidentType));
+        accident.setAccidentType(accidentTypeService.findById(idAccidentType).get());
         Set<Rule> rules = new HashSet<>();
-        idRules.forEach(n -> rules.add(ruleService.findById(n)));
+        idRules.forEach(n -> rules.add(ruleService.findById(n).get()));
         accident.setRules(rules);
         accidentService.update(accident);
         return "redirect:/accidents";

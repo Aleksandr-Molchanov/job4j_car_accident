@@ -2,32 +2,32 @@ package ru.job4j.accident.service;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.accident.model.Accident;
-import ru.job4j.accident.repository.AccidentHibernate;
+import ru.job4j.accident.repository.AccidentRepository;
 
-import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class AccidentService {
 
-    private AccidentHibernate accidentMem;
+    private AccidentRepository accidentRepository;
 
-    public AccidentService(AccidentHibernate accidentMem) {
-        this.accidentMem = accidentMem;
+    public AccidentService(AccidentRepository accidentRepository) {
+        this.accidentRepository = accidentRepository;
     }
 
-    public Collection<Accident> getAllAccidents() {
-        return accidentMem.findAll();
+    public Iterable<Accident> getAllAccidents() {
+        return accidentRepository.findAll();
     }
 
     public void addAccident(Accident accident) {
-        accidentMem.add(accident);
+        accidentRepository.save(accident);
     }
 
-    public Accident findById(int id) {
-        return accidentMem.findById(id);
+    public Optional<Accident> findById(int id) {
+        return accidentRepository.findById(id);
     }
 
     public void update(Accident accident) {
-        accidentMem.update(accident);
+        accidentRepository.save(accident);
     }
 }
