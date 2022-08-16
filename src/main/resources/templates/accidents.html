@@ -28,6 +28,10 @@
                 <form th:action="@{/formAddAccident}" method="GET">
                     <button type="submit" class="btn btn-primary">Добавить инцидент</button>
                 </form>
+                <a class="nav-item nav-link" th:href="@{/logout}">
+                    <span th:text="${user.username}"></span>
+                    <span> | Выйти</span>
+                </a>
             </div>
         </div>
     </nav>
