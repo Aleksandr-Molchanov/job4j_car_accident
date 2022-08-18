@@ -9,8 +9,6 @@ public class Authority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String username;
-
     private String authority;
 
     public int getId() {
@@ -27,14 +25,6 @@ public class Authority {
 
     public void setAuthority(String authority) {
         this.authority = authority;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     @Override
