@@ -1,18 +1,16 @@
 package ru.job4j.accident.repository;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import ru.job4j.accident.model.Accident;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface AccidentRepository extends CrudRepository<Accident, Integer> {
 
-    @Override
-    <S extends Accident> S save(S s);
+    @Query("select distinct a from Accident a join fetch a.rules join fetch a.accidentType")
+    List<Accident> findAllAccidents();
 
-    @Override
-    Optional<Accident> findById(Integer integer);
-
-    @Override
-    Iterable<Accident> findAll();
+    @Query("select distinct a from Accident a join fetch a.rules join fetch a.accidentType where a.id= ?1")
+    Accident findById(int id);
 }

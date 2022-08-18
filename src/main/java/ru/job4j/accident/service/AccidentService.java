@@ -16,7 +16,7 @@ public class AccidentService {
     }
 
     public Iterable<Accident> getAllAccidents() {
-        return accidentRepository.findAll();
+        return accidentRepository.findAllAccidents();
     }
 
     public void addAccident(Accident accident) {
@@ -24,7 +24,7 @@ public class AccidentService {
     }
 
     public Optional<Accident> findById(int id) {
-        return accidentRepository.findById(id);
+        return Optional.ofNullable(accidentRepository.findById(id));
     }
 
     public void update(Accident accident) {
